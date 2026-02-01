@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiểm Tra Tồn Kho</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+}
+
+body {
+    margin: 0;
+    background: #eef2f7;
+}
+
+.app {
+    max-width: 480px;
+    margin: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+.header {
+    background: linear-gradient(135deg,#2f80ed,#56ccf2);
+    color: white;
+    padding: 16px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    margin: 12px;
+    border-radius: 16px;
+    padding: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* INGREDIENT */
+.ingredient {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* GRID INPUT */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+}
+
+.label {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    text-align: center;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2f80ed;
+}
+
+/* RESULT */
+.result {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.du { color: #16a34a; }
+.thieu { color: #dc2626; }
+
+/* BUTTON */
+.btn-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin: 10px 12px 20px;
+}
+
+button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.check {
+    background: #2f80ed;
+    color: white;
+}
+
+.reset {
+    background: #9ca3af;
+    color: white;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<div class="header">📦 Kiểm Tra Hàng Tồn</div>
+
+<!-- ITEM -->
+<div class="card item">
+    <div class="ingredient">Mực</div>
+    <div class="grid">
+        <div><div class="label">Tồn hôm trước</div><input type="number" value="0"></div>
+        <div><div class="label">Nhập hôm nay</div><input type="number" value="0"></div>
+        <div><div class="label">Bán hôm nay</div><input type="number" value="0"></div>
+        <div><div class="label">Tồn thực tế</div><input type="number" value="0"></div>
+    </div>
+    <div class="result">
+        <span class="du">Dư: 0</span>
+        <span class="thieu">Thiếu: 0</span>
+    </div>
+</div>
+
+<!-- COPY CARD -->
+<div class="card item">
+    <div class="ingredient">Tôm</div>
+    <div class="grid">
+        <div><div class="label">Tồn hôm trước</div><input type="number" value="0"></div>
+        <div><div class="label">Nhập hôm nay</div><input type="number" value="0"></div>
+        <div><div class="label">Bán hôm nay</div><input type="number" value="0"></div>
+        <div><div class="label">Tồn thực tế</div><input type="number" value="0"></div>
+    </div>
+    <div class="result">
+        <span class="du">Dư: 0</span>
+        <span class="thieu">Thiếu: 0</span>
+    </div>
+</div>
+
+<div class="card item">
+    <div class="ingredient">Hủ tiếu nước</div>
+    <div class="grid">
+        <div><div class="label">Tồn hôm trước</div><input type="number" value="0"></div>
+        <div><div class="label">Nhập hôm nay</div><input type="number" value="0"></div>
+        <div><div class="label">Bán hôm nay</div><input type="number" value="0"></div>
+        <div><div class="label">Tồn thực tế</div><input type="number" value="0"></div>
+    </div>
+    <div class="result">
+        <span class="du">Dư: 0</span>
+        <span class="thieu">Thiếu: 0</span>
+    </div>
+</div>
+
+<div class="card item">
+    <div class="ingredient">Hủ tiếu khô</div>
+    <div class="grid">
+        <div><div class="label">Tồn hôm trước</div><input type="number" value="0"></div>
+        <div><div class="label">Nhập hôm nay</div><input type="number" value="0"></div>
+        <div><div class="label">Bán hôm nay</div><input type="number" value="0"></div>
+        <div><div class="label">Tồn thực tế</div><input type="number" value="0"></div>
+    </div>
+    <div class="result">
+        <span class="du">Dư: 0</span>
+        <span class="thieu">Thiếu: 0</span>
+    </div>
+</div>
+
+<div class="card item">
+    <div class="ingredient">Trứng cút</div>
+    <div class="grid">
+        <div><div class="label">Tồn hôm trước</div><input type="number" value="0"></div>
+        <div><div class="label">Nhập hôm nay</div><input type="number" value="0"></div>
+        <div><div class="label">Bán hôm nay</div><input type="number" value="0"></div>
+        <div><div class="label">Tồn thực tế</div><input type="number" value="0"></div>
+    </div>
+    <div class="result">
+        <span class="du">Dư: 0</span>
+        <span class="thieu">Thiếu: 0</span>
+    </div>
+</div>
+
+<div class="card item">
+    <div class="ingredient">Gia vị sốt</div>
+    <div class="grid">
+        <div><div class="label">Tồn hôm trước</div><input type="number" value="0"></div>
+        <div><div class="label">Nhập hôm nay</div><input type="number" value="0"></div>
+        <div><div class="label">Bán hôm nay</div><input type="number" value="0"></div>
+        <div><div class="label">Tồn thực tế</div><input type="number" value="0"></div>
+    </div>
+    <div class="result">
+        <span class="du">Dư: 0</span>
+        <span class="thieu">Thiếu: 0</span>
+    </div>
+</div>
+
+<div class="btn-group">
+    <button class="check" onclick="tinh()">Đối chiếu</button>
+    <button class="reset" onclick="resetData()">Làm mới</button>
+</div>
+
+<div class="footer">Offline • Mobile App Style</div>
+
+</div>
+
+<script>
+function tinh() {
+    document.querySelectorAll('.item').forEach(item => {
+        const i = item.querySelectorAll('input');
+        const tonLT = +i[0].value + +i[1].value - +i[2].value;
+        const tonTT = +i[3].value;
+
+        const du = item.querySelector('.du');
+        const thieu = item.querySelector('.thieu');
+
+        du.textContent = 'Dư: 0';
+        thieu.textContent = 'Thiếu: 0';
+
+        if (tonTT > tonLT) du.textContent = 'Dư: ' + (tonTT - tonLT);
+        if (tonTT < tonLT) thieu.textContent = 'Thiếu: ' + (tonLT - tonTT);
+    });
+}
+
+function resetData() {
+    if (!confirm('Xóa toàn bộ dữ liệu?')) return;
+    document.querySelectorAll('input').forEach(i => i.value = 0);
+    document.querySelectorAll('.du').forEach(d => d.textContent = 'Dư: 0');
+    document.querySelectorAll('.thieu').forEach(t => t.textContent = 'Thiếu: 0');
+}
+</script>
+
+</body>
+</html>
